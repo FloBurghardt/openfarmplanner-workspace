@@ -6,7 +6,7 @@
 |---|---|---|---|---|
 | [0001](0001-run-openfarmplanner-locally-on-pc.md) | Run OpenFarmPlanner locally on the PC, NAS later | accepted | 2026-11-17 | records/work/261117_idea_local_openfarmplanner |
 | [0002](0002-pull-community-crop-library-snapshot.md) | Pull the community crop library as a local snapshot | accepted | 2026-11-17 | records/work/261117_idea_local_openfarmplanner |
-| [0003](0003-import-library-snapshot-with-management-command.md) | Import library snapshots with a management command in the code repo | proposed | 2026-11-17 | records/work/records/work/261117_idea_local_openfarmplanner |
-| [0004](0004-separate-code-workspace-and-farm-data.md) | Keep code, workspace and farm data separate | proposed | 2026-11-17 | records/work/records/work/261117_idea_local_openfarmplanner |
+| [0003](0003-import-library-snapshot-with-management-command.md) | Import library snapshots with a management command in the code repo | accepted | 2026-11-17 | records/work/records/work/261117_idea_local_openfarmplanner |
+| [0004](0004-separate-code-workspace-and-farm-data.md) | Keep code, workspace and farm data separate | accepted | 2026-11-17 | records/work/records/work/261117_idea_local_openfarmplanner |
 
 _4 record(s)._

@@ -22,3 +22,4 @@ Find out what it takes to run OpenFarmPlanner (https://openfarmplanner.org/en) l
 - 2026-11-17 — spike 2 done against the hosted site: 158 entries in data/; 0002 accepted.
 - 2026-11-17 — repo layout settled with the user (code / workspace / farm data separate); import designed, 0003 proposed.
 - 2026-11-17 — full library pulled (316 species) and imported locally with the new command; pull script moved to tools/.
+- 2026-11-17 — SQLite path configurable, Windows bug fixed properly, branch `local` runs; farm data moved to ../OpenFarmPlanner_data/.

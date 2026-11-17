@@ -1,9 +1,9 @@
 ---
 number: 0003
 title: Import library snapshots with a management command in the code repo
-status: proposed
+status: accepted
 date: 2026-11-17
-decided:
+decided: 2026-11-17
 supersedes:
 superseded_by:
 source: records/work/records/work/261117_idea_local_openfarmplanner

@@ -6,7 +6,7 @@ the moment something gets an owner and a target it belongs in the open points li
 
 | Date | Entry | Type | Status | Update |
 |------|-------|------|--------|--------|
-| 2026-11-17 | Upstream dashboard crashes on Windows ("page could not be restored"): `TaskBoard.tsx` and `taskBoard.ts` differ only in case, so `import ... /TaskBoard` resolves to the `.ts` file on case-insensitive file systems. Works on Linux. | issue | in-progress | 2026-11-17 local workaround in `upstream/`: explicit `.tsx` in `src/pages/Dashboard.tsx:16`. Proper fix (rename `taskBoard.ts`) is a candidate first upstream PR. Also `useAutoSizeSidebarWidth.test.ts`/`.tsx` collide (tests only). |
+| 2026-11-17 | Upstream dashboard crashes on Windows ("page could not be restored"): `TaskBoard.tsx` and `taskBoard.ts` differ only in case, so `import ... /TaskBoard` resolves to the `.ts` file on case-insensitive file systems. Works on Linux. | issue | resolved | 2026-11-17 local workaround in `upstream/`: explicit `.tsx` in `src/pages/Dashboard.tsx:16`. Proper fix (rename `taskBoard.ts`) is a candidate first upstream PR. Also `useAutoSizeSidebarWidth.test.ts`/`.tsx` collide (tests only). 2026-11-17 the test pair is no collision (same case, different extension). Fixed on `fix/case-colliding-file-names` (`587af101`): `taskBoard.ts` renamed to `taskBoardModel.ts`; workaround dropped. Upstream PR candidate. |
 
 ## Columns
 
