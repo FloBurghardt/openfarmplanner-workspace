@@ -32,20 +32,29 @@ Prerequisites: `git`, `uv`, Node.js 22+ with npm 10+, and an SSH key for GitHub:
   Collaborators), accept the invitation, and add the key to that account instead.
 - `git config --global user.name "…"` and `user.email "…"` on the new machine.
 
+Layout (one folder per project, data outside both repos as in decision 0004):
+
+```
+~/Projekte/OpenFarmPlanner/
+  workspace/        repo openfarmplanner-workspace
+    upstream/       repo openfarmplanner, branch local
+  data/             db.sqlite3 + media/ (from a backup or the USB stick)
+```
+
 ```bash
 # 1. Workspace and code
-git clone git@github.com:FloBurghardt/openfarmplanner-workspace.git OpenFarmPlanner
-cd OpenFarmPlanner
+mkdir -p ~/Projekte/OpenFarmPlanner && cd ~/Projekte/OpenFarmPlanner
+git clone git@github.com:FloBurghardt/openfarmplanner-workspace.git workspace
+cd workspace
 git clone -b local git@github.com:FloBurghardt/openfarmplanner.git upstream
 git -C upstream remote add upstream https://github.com/OpenFarmPlanner/openfarmplanner.git
 
-# 2. Farm data: newest backup folder from the share -> local disk
-mkdir -p ~/OpenFarmPlanner_data
-cp -r /path/to/share/openfarmplanner/<newest>/{db.sqlite3,media} ~/OpenFarmPlanner_data/
+# 2. Farm data: db.sqlite3 and media/ of a backup folder -> ~/Projekte/OpenFarmPlanner/data/
+mkdir -p ../data && cp -r /path/to/backup/{db.sqlite3,media} ../data/
 
 # 3. Backend
 uv tool install pdm
-cp tools/backend.env.example upstream/backend/.env   # then fix the two paths
+cp tools/backend.env.example upstream/backend/.env   # set SQLITE_PATH / MEDIA_ROOT to ../data
 cd upstream/backend && pdm install && pdm run migrate && cd ../..
 
 # 4. Frontend
