@@ -15,7 +15,7 @@ one or two sentences instead. Details for users: [README.md](README.md).
 - [records/requirements/](records/requirements/requirements.md) — what the result must do; cited documents in `sources/`.
 - [records/work/](records/work/index.md) — one working folder per piece of work; `README.md` in each is its status.
 - [tools/](tools/) — scripts that run outside the app, e.g. `pull_public_library.py` (library snapshot from openfarmplanner.org).
-- `upstream/` — git-ignored clone of the code repo; clone it there on a new machine. Farm data lives outside both repos.
+- `upstream/` — git-ignored clone of the code repo `git@github.com:FloBurghardt/openfarmplanner.git` (private, 1:1 copy of upstream; own work on branches). Remote `origin` is our copy, `upstream` is https://github.com/OpenFarmPlanner/openfarmplanner. New machine: `git clone git@github.com:FloBurghardt/openfarmplanner.git upstream && git -C upstream remote add upstream https://github.com/OpenFarmPlanner/openfarmplanner.git`. Farm data lives outside both repos ([0004](records/decisions/0004-separate-code-workspace-and-farm-data.md)).
 - [docs/](docs/) — shipped documentation, every file linked from README.
 
 ## Rules
