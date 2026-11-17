@@ -23,8 +23,14 @@ one working copy fight over git's lock files. The share is for **backups** (see
 
 ## Steps (Linux)
 
-Prerequisites: `git`, `uv`, Node.js 22+ with npm 10+, and an SSH key for GitHub
-(`ssh -T git@github.com` answers "Hi FloBurghardt!").
+Prerequisites: `git`, `uv`, Node.js 22+ with npm 10+, and an SSH key for GitHub:
+
+- Own key per machine: `ssh-keygen -t ed25519 -C "<machine>-openfarmplanner"`, then add
+  `~/.ssh/id_ed25519.pub` on GitHub under Settings → SSH and GPG keys. Same account
+  (`FloBurghardt`): `ssh -T git@github.com` answers "Hi FloBurghardt!".
+- A different GitHub account: invite it as collaborator in **both** repos (Settings →
+  Collaborators), accept the invitation, and add the key to that account instead.
+- `git config --global user.name "…"` and `user.email "…"` on the new machine.
 
 ```bash
 # 1. Workspace and code
