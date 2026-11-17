@@ -22,13 +22,12 @@ Decisions 0001, 0002 accepted; 0003 (import command) and 0004 (repo layout) buil
 
 ## Next
 
-1. Remotes on kellerassel2 (`flomin@kellerassel2:/volume1/git/<repo>`, as beurer_bm58): SSH key is rejected by the NAS (`Permission denied (publickey)`, key offered from the agent). User is updating the NAS; then create bare repos `openfarmplanner.git` and `openfarmplanner-workspace.git` and push.
+1. Remotes on GitHub (kellerassel2 dropped: SSH there works for admins only). User creates two empty private repos, `openfarmplanner` and `openfarmplanner-workspace`; then push the code repo with full history (`upstream` as second remote) and this workspace.
 2. Configurable SQLite path (`backend/config/settings.py` hardcodes `BASE_DIR / 'db.sqlite3'`; `MEDIA_ROOT` already configurable), so farm data can live outside the code.
 3. Start planning real data in German: own project, seasons from 2027, crops from the library.
 
 ## Waiting for the user
 
-- Fix SSH on kellerassel2 (see Next 1).
-- Change the temporary openfarmplanner.org password (shared in chat).
+- SSH URLs of the two GitHub repos (see Next 1).
 - Confirm 0003 and 0004.
 - Confirm `share` class in PROJECT_CARD.md (set to `internal`).
