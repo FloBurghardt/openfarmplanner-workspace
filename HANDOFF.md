@@ -31,7 +31,7 @@ Decisions 0001–0004 accepted.
 
 ## Next
 
-1. Move to the new PC (CachyOS): [docs/setup-new-machine.md](docs/setup-new-machine.md), including the starting prompt. Untested on Linux.
+1. Move to the new PC (CachyOS) under `~/Projekte/OpenFarmPlanner/`: [docs/setup-new-machine.md](docs/setup-new-machine.md). Transfer folder for the USB stick: `../OpenFarmPlanner_transfer/` (data backup of 2026-11-17 + `PROMPT.md`). The other PC uses a second GitHub account as collaborator, SSH key from KeePassXC.
 2. Then start planning in German there: own project, seasons from 2027, crops from the library — needs the user's farm (locations, fields, beds) and crop wishes.
 3. Open points [OP-01](records/open-points/open-points.md) (where it runs for good) and OP-02 (backups to SMB).
 4. Upstream updates: `git -C upstream fetch upstream`, update `main`, push; merge `main` into `local`.
