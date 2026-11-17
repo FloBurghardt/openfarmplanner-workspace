@@ -31,13 +31,13 @@ Decisions 0001–0004 accepted.
 
 ## Next
 
-1. Start planning in German: own project, seasons from 2027, crops from the library — needs the user's farm (locations, fields, beds) and crop wishes.
-2. Back up `OpenFarmPlanner_data/` (target to be chosen by the user).
-3. Upstream updates: `git -C upstream fetch upstream`, update `main`, push; merge `main` into `local`.
-4. Later: offer the three branches upstream (open an issue first for the import, see its commit note on the species-API rule); move to CachyOS.
+1. Move to the new PC (CachyOS): [docs/setup-new-machine.md](docs/setup-new-machine.md), including the starting prompt. Untested on Linux.
+2. Then start planning in German there: own project, seasons from 2027, crops from the library — needs the user's farm (locations, fields, beds) and crop wishes.
+3. Open points [OP-01](records/open-points/open-points.md) (where it runs for good) and OP-02 (backups to SMB).
+4. Upstream updates: `git -C upstream fetch upstream`, update `main`, push; merge `main` into `local`.
+5. Later: offer the three branches upstream (open an issue first for the import, see its commit note on the species-API rule).
 
 ## Waiting for the user
 
-- Farm structure and crop plans to start with (Next 1).
-- Where to back up `OpenFarmPlanner_data/`.
-- Confirm `share` class in PROJECT_CARD.md (set to `internal`).
+- Push the workspace (`git push` here; the agent's push was blocked and the SSH agent had no keys).
+- Before leaving this PC: run a backup of `../OpenFarmPlanner_data/` to the SMB share — only if the demo data is worth keeping; otherwise start fresh with the snapshot import.

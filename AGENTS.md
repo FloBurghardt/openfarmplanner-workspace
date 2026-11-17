@@ -14,7 +14,7 @@ one or two sentences instead. Details for users: [README.md](README.md).
 - [records/open-points/](records/open-points/open-points.md) — what must be settled, each with an owner and a target.
 - [records/requirements/](records/requirements/requirements.md) — what the result must do; cited documents in `sources/`.
 - [records/work/](records/work/index.md) — one working folder per piece of work; `README.md` in each is its status.
-- [tools/](tools/) — scripts that run outside the app, e.g. `pull_public_library.py` (library snapshot from openfarmplanner.org).
+- [tools/](tools/) — scripts that run outside the app: `pull_public_library.py` (library snapshot from openfarmplanner.org), `backup_data.py` (farm data → dated backup folder), `backend.env.example` (the local `upstream/backend/.env`).
 - `upstream/` — git-ignored clone of the code repo `git@github.com:FloBurghardt/openfarmplanner.git` (private, 1:1 copy of upstream; own work on branches). Remote `origin` is our copy, `upstream` is https://github.com/OpenFarmPlanner/openfarmplanner. New machine: `git clone git@github.com:FloBurghardt/openfarmplanner.git upstream && git -C upstream remote add upstream https://github.com/OpenFarmPlanner/openfarmplanner.git`. Branches there: `main` = upstream unchanged; one `feat/…`/`fix/…` branch per change, based on `main` so it can go upstream as a PR; `local` = `main` merged with our branches, the one that runs. Farm data lives outside both repos, set in `upstream/backend/.env` via `SQLITE_PATH` and `MEDIA_ROOT` ([0004](records/decisions/0004-separate-code-workspace-and-farm-data.md)); on this PC `../OpenFarmPlanner_data/`.
 - [docs/](docs/) — shipped documentation, every file linked from README.
 

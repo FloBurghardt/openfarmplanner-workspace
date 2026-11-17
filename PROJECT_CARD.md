@@ -1,7 +1,7 @@
 ---
 id: openfarmplanner
 title: Local OpenFarmPlanner setup for LLM-assisted crop planning
-share: internal
+share: open
 kind: project
 tags: [farming, crop-planning, django, react, self-hosting]
 related: []

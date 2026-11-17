@@ -6,7 +6,8 @@ improvement log instead.
 
 | ID | Point | Owner | Target | Status | Update |
 |----|-------|-------|--------|--------|--------|
-| OP-01 | | | | open | |
+| OP-01 | Where the instance runs for good: local PC only, all-inkl webspace or Synology NAS (old DSM; SSH there is admin-only) | FB | once it runs on the new PC as wanted | open | 2026-11-17 raised; hosted use needs a real deployment (HTTPS, no DEBUG), not the dev setup |
+| OP-02 | Regular backups of the farm data folder to the SMB share (`tools/backup_data.py`), automated on the new PC | FB | before the first real farm data is entered | open | 2026-11-17 raised; script exists and was tested against a local folder |
 
 ## Columns
 
