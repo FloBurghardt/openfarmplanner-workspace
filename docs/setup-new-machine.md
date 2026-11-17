@@ -2,7 +2,7 @@
 
 How to get the local OpenFarmPlanner running on another PC (planned: CachyOS) with the same
 code, records and farm data. Written 2026-11-17 on Windows; the Linux steps follow the
-upstream README but are **not yet tested** on CachyOS.
+upstream README and were **tested on CachyOS on 2026-11-17** (see "Differences found on CachyOS").
 
 ## What moves how
 
@@ -68,6 +68,31 @@ cd upstream/frontend && npm run dev        # http://localhost:5173
 Without a backup (fresh start) skip step 2 and fill the library from the snapshot instead:
 `cd upstream/backend && pdm run python manage.py import_public_library_snapshot ../../records/work/261117_idea_local_openfarmplanner/data/public_library_snapshot_2026-11-17.json`,
 then create an account with `pdm run createsuperuser`.
+
+## Differences found on CachyOS (2026-11-17)
+
+- **SSH agent from KeePassXC:** enable SSH agent integration in KeePassXC, add the key to the
+  agent, and make sure `SSH_AUTH_SOCK` is set in the shell (here
+  `/run/user/1000/ssh-agent.socket`; it was empty until the shell was restarted). Check with
+  `ssh-add -l`.
+- **`~/.ssh/config`:** `IdentityFile ~/.ssh/id_ed25519.pub` (public file, with
+  `IdentitiesOnly yes`) prints "UNPROTECTED PRIVATE KEY FILE / bad permissions" if the `.pub`
+  is 0644. Harmless once the agent serves the key (the warning stays); `chmod 600` silences it.
+- **Collaborator account:** `ssh -T git@github.com` answers with the collaborator's own
+  username (here `sandragmiaskistl`), not `FloBurghardt`. That is expected.
+- **Node:** `sudo pacman -S --needed nodejs npm` gave Node 26.13 / npm 12.2 (newer than the
+  required 22 / 10); install, tests and dev server work. An agent cannot run `sudo`; do it
+  yourself with `! sudo ...`.
+- **pdm:** `uv tool install pdm` puts it in `~/.local/bin`; that must be on `PATH`.
+- **Tests need the test group:** `pdm install -dG test`, then
+  `pdm run test farm/tests/test_import_public_library_snapshot.py`. Frontend:
+  `npx vitest run src/__tests__/taskBoard.test.ts`. Both passed (2 and 3 tests).
+- **npm** warns that the `core-js` postinstall script is blocked (`npm install-scripts`);
+  the app is not affected.
+- **Data:** the USB stick's `data/` was already copied to `~/Projekte/OpenFarmPlanner_transfer/`;
+  `cp -r` from there to `data/` worked, `PRAGMA integrity_check` returned `ok`. The database
+  holds 318 species (HANDOFF said 316; the difference is probably the demo project).
+- `pdm run migrate` found nothing to apply: the backup was already migrated.
 
 ## Starting prompt for the agent on the new machine
 

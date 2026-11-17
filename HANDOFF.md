@@ -4,11 +4,11 @@ Rules and where everything lives: [AGENTS.md](AGENTS.md).
 Rewrite this file when the state changes; don't keep a history here, git has it.
 Short as possible, precise as needed: link to records instead of restating them.
 
-Last updated: 2026-11-17
+Last updated: 2026-11-17 (moved to CachyOS)
 
 ## State
 
-Local evaluation instance on this Windows PC from `upstream/`, branch `local` (upstream `main`
+Local evaluation instance, now on the CachyOS PC (`~/Projekte/OpenFarmPlanner/`, data in `../data/`; was Windows), from `upstream/`, branch `local` (upstream `main`
 `57831b28` + our three branches, see [AGENTS.md](AGENTS.md#map)): backend
 `cd upstream/backend && pdm run runserver` (:8000), frontend `cd upstream/frontend && npm run dev`
 (:5173), demo login demo@example.com / demo-local-only. Farm data (database, media) in
@@ -31,7 +31,7 @@ Decisions 0001–0004 accepted.
 
 ## Next
 
-1. Move to the new PC (CachyOS) under `~/Projekte/OpenFarmPlanner/`: [docs/setup-new-machine.md](docs/setup-new-machine.md). Transfer folder for the USB stick: `../OpenFarmPlanner_transfer/` (data backup of 2026-11-17 + `PROMPT.md`). The other PC uses a second GitHub account as collaborator, SSH key from KeePassXC.
+1. Done 2026-11-17: moved to CachyOS, both servers run, demo login works, tests of our branches pass. Differences from the guide: [docs/setup-new-machine.md](docs/setup-new-machine.md#differences-found-on-cachyos-2026-11-17). Commands here: `export PATH=$HOME/.local/bin:$PATH`, backend `pdm run runserver`, frontend `npm run dev`. `../OpenFarmPlanner_transfer/` can be deleted once the data is confirmed. This PC uses the second GitHub account (collaborator), SSH key from KeePassXC.
 2. Then start planning in German there: own project, seasons from 2027, crops from the library — needs the user's farm (locations, fields, beds) and crop wishes.
 3. Open points [OP-01](records/open-points/open-points.md) (where it runs for good) and OP-02 (backups to SMB).
 4. Upstream updates: `git -C upstream fetch upstream`, update `main`, push; merge `main` into `local`.
